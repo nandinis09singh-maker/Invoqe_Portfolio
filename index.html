@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandini singh — Frontend Developer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="topbar">
+  <div class="brand">Jobboard<span class="dot">.</span></div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search title or company…">
+  </div>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="browse">Browse</button>
+    <button class="tab-btn" data-tab="saved">Saved <span id="savedCount" class="count-badge">0</span></button>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside id="filters">
+    <h2>Filters</h2>
+
+    <div class="filter-group">
+      <h3>Location</h3>
+      <div id="locationFilters" class="filter-options"></div>
+    </div>
+
+    <div class="filter-group">
+      <h3>Job type</h3>
+      <div id="typeFilters" class="filter-options"></div>
+    </div>
+
+    <div class="filter-group">
+      <h3>Experience level</h3>
+      <div id="expFilters" class="filter-options"></div>
+    </div>
+
+    <button id="clearFilters" class="btn btn-ghost btn-small">Clear filters</button>
+  </aside>
+
+  <main>
+    <div class="results-bar">
+      <span id="resultsCount"></span>
+      <select id="sortSelect">
+        <option value="recent">Sort: Most recent</option>
+        <option value="title">Sort: Title A–Z</option>
+        <option value="company">Sort: Company A–Z</option>
+      </select>
+    </div>
+
+    <div id="jobList" class="job-list"></div>
+
+    <div id="pagination" class="pagination"></div>
+  </main>
+</div>
+
+<!-- Job details modal -->
+<div id="detailsModal" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="closeModal" class="modal-close" aria-label="Close details">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="jobs-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
