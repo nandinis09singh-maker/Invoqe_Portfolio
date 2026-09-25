@@ -3,70 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nandini singh — Frontend Developer</title>
+<title>Nandini Singh — Frontend Developer</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header id="topbar">
-  <div class="brand">Jobboard<span class="dot">.</span></div>
-  <div class="search-wrap">
-    <input type="text" id="searchInput" placeholder="Search title or company…">
-  </div>
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="browse">Browse</button>
-    <button class="tab-btn" data-tab="saved">Saved <span id="savedCount" class="count-badge">0</span></button>
-  </nav>
-</header>
 
-<div class="layout">
-  <aside id="filters">
-    <h2>Filters</h2>
+<nav id="navbar">
+  <div class="nav-brand">NS<span class="dot">.</span></div>
+  <button id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="navLinks">
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <button id="themeToggle" aria-label="Toggle dark mode">☾</button>
+</nav>
 
-    <div class="filter-group">
-      <h3>Location</h3>
-      <div id="locationFilters" class="filter-options"></div>
+<main>
+  <section id="hero" class="section">
+    <p class="eyebrow">01 — building for the browser</p>
+    <h1>Nandini Singh writes<br>interfaces that hold up<br>under real use.</h1>
+    <p class="hero-sub">Frontend developer focused on fast, accessible, component-driven UI. Currently building web experiences with React and a lot of attention to the details nobody notices until they're missing.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">See the work</a>
+      <a href="#resume" class="btn btn-ghost">Resume</a>
     </div>
+  </section>
 
-    <div class="filter-group">
-      <h3>Job type</h3>
-      <div id="typeFilters" class="filter-options"></div>
+  <section id="about" class="section">
+    <h2>About</h2>
+    <div class="about-grid">
+      <p class="about-text">I'm a frontend developer who likes the unglamorous parts of the job — layout edge cases, loading states, the moment a form validates correctly on the first try. I care about shipping interfaces that feel obvious to use, which usually means a lot of quiet iteration behind the scenes.</p>
+      <p class="about-text">Outside of client work, I contribute to a couple of open-source component libraries and spend too much time tweaking my terminal setup.</p>
     </div>
+  </section>
 
-    <div class="filter-group">
-      <h3>Experience level</h3>
-      <div id="expFilters" class="filter-options"></div>
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul><li>JavaScript (ES2023)</li><li>TypeScript</li><li>HTML &amp; CSS</li><li>Python (basic)</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks</h3>
+        <ul><li>React</li><li>Next.js</li><li>Vue 3</li><li>Tailwind CSS</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Tooling</h3>
+        <ul><li>Git &amp; GitHub</li><li>Vite / Webpack</li><li>Figma</li><li>Jest</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Other</h3>
+        <ul><li>REST &amp; GraphQL APIs</li><li>Accessibility (WCAG)</li><li>Responsive design</li><li>CI/CD basics</li></ul>
+      </div>
     </div>
+  </section>
 
-    <button id="clearFilters" class="btn btn-ghost btn-small">Clear filters</button>
-  </aside>
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-list">
 
-  <main>
-    <div class="results-bar">
-      <span id="resultsCount"></span>
-      <select id="sortSelect">
-        <option value="recent">Sort: Most recent</option>
-        <option value="title">Sort: Title A–Z</option>
-        <option value="company">Sort: Company A–Z</option>
-      </select>
+      <article class="project-card">
+        <div class="project-index">01</div>
+        <div class="project-body">
+          <h3>Job Search Dashboard</h3>
+          <p>A frontend dashboard for browsing and saving job listings, with search, filters by location and type, and a details view.</p>
+          <div class="project-tags"><span>React</span><span>Tailwind</span></div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-index">02</div>
+        <div class="project-body">
+          <h3>Habit Tracker</h3>
+          <p>A small daily-habit tracker with streak counting and local persistence, built to practice state management patterns.</p>
+          <div class="project-tags"><span>Vue 3</span><span>LocalStorage</span></div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-index">03</div>
+        <div class="project-body">
+          <h3>Recipe Finder</h3>
+          <p>Searches a public recipe API by ingredient, with filterable results and a print-friendly recipe view.</p>
+          <div class="project-tags"><span>JavaScript</span><span>Public API</span></div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <div id="jobList" class="job-list"></div>
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2026 — Present</div>
+        <div class="timeline-content">
+          <h3>Frontend Development Intern — Invoqe</h3>
+          <p>Building responsive UI components and internal dashboards; working across a small product team on real user-facing features.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2025</div>
+        <div class="timeline-content">
+          <h3>Freelance Web Developer</h3>
+          <p>Delivered landing pages and small business sites for local clients, from design handoff to deployment.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022 — 2026</div>
+        <div class="timeline-content">
+          <h3>B.Tech, Computer Science</h3>
+          <p>Coursework in data structures, web systems, and human-computer interaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div id="pagination" class="pagination"></div>
-  </main>
-</div>
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <p class="resume-text">A full copy of my resume, including tools and coursework not listed here.</p>
+    <a href="./resume.pdf" class="btn btn-primary" download>Download PDF</a>
+  </section>
 
-<!-- Job details modal -->
-<div id="detailsModal" class="modal-overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button id="closeModal" class="modal-close" aria-label="Close details">×</button>
-    <div id="modalBody"></div>
-  </div>
-</div>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p class="contact-text">Open to frontend roles and freelance work. The fastest way to reach me is email.</p>
+    <form id="contactForm" class="contact-form">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+      <p id="formStatus" class="form-status" role="status"></p>
+    </form>
+    <div class="contact-links">
+      <a href="mailto:nandini.singh@example.com">nandini.singh@example.com</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
 
-<script src="jobs-data.js"></script>
+<footer>
+  <p>Built by Nandini Singh — <span id="year"></span></p>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
